@@ -1,0 +1,6 @@
+[package]
+name = "git_httpsable"
+version = "0.1.0"
+authors = ["Sanemat <o.gata.ken@gmail.com>"]
+
+[dependencies]
