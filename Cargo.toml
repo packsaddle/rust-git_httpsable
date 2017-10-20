@@ -1,8 +1,6 @@
 [package]
 authors = ["Sanemat <o.gata.ken@gmail.com>"]
-categories = [
-    "development-tools",
-]
+categories = ["development-tools"]
 description = "git via https."
 include = [
     "src/**/*",
@@ -24,3 +22,6 @@ repository = "packsaddle/rust-git_httpsable"
 
 [badges.travis-ci]
 repository = "packsaddle/rust-git_httpsable"
+
+[dependencies]
+url = "1.5.1"
