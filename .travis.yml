@@ -12,7 +12,7 @@ sudo: required
 env:
   global:
     # TODO Update this to match the name of your project.
-    - CRATE_NAME=git_httpsable_cli
+    - CRATE_NAME=git_httpsable
 
 matrix:
   # TODO These are all the build jobs. Adjust as necessary. Comment out what you
@@ -71,23 +71,8 @@ before_deploy:
   - sh ci/before_deploy.sh
 
 deploy:
-  # TODO update `api_key.secure`
-  # - Create a `public_repo` GitHub token. Go to: https://github.com/settings/tokens/new
-  # - Encrypt it: `travis encrypt 0123456789012345678901234567890123456789
-  # - Paste the output down here
-  api_key:
-    secure: "k2Mtgt4alt3StvfLsB9t7cAQQ+JodpPrueWMdUdarQl7j/ygUBQlEsENHDoheF0GGNYVozlHdnvz8IVnqv6fhXQmMGyv3eVj8senTb5E95SEKDPWBSpXvadyhWDQw5jC1yK6U65d5r+U76ElrBB7cYBwyfBbYF9fTOMGir3z7IxmZ4bQLVCtIn1wGSb9JywsN7ySnFItehqxwH4I/thr4Vp4UcUe30nTRGCgPyjYADRPExZEKtag8+jlArIldHEievVMaBN+05faXqQVZPpdmx1BPJz/KrJ7RvLB86Mtj/DIcXBzRDk+4jUbpdKXvohrDPv4rC4NuYHbcx0+GqYuu1pGLdu0FR4WGCUiJ5wjZOYu2MlhQgiG29yvBUzHK56eKyNO20rA31tbbIbNpKdrVsDk2/QrzzVPXlyD6hF4CdQUcabwBTe4ayOfhRP5hBBHDq85LHub76M1XrTjJMHm2pLL/1YZMtxlLQK3gY9PIJrTf7FhQuc0pPxLpTWfErF+ktNQFtUDrpQW/pk1vCcpbb21Gvrg4Hpi4BzCE0c1eG/eziyCUYv0OIlMwLLYVxFqvDqBNBtLrTbf38rD4V8ropsvx5m4YQYWLlobNq0lzCEmKY8zz7hX2fMWfDlvJhUPEu6/MFj18LOFFod+cyDWOmC4XlE8QhR21INQk9f1JVk="
-  file_glob: true
-  file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
   on:
-    # TODO Here you can pick which targets will generate binary releases
-    # In this example, there are some targets that are tested using the stable
-    # and nightly channels. This condition makes sure there is only one release
-    # for such targets and that's generated using the stable channel
-    condition: $TRAVIS_RUST_VERSION = stable
-    tags: true
-  provider: releases
-  skip_cleanup: true
+    condition: $DEPLOY = never
 
 cache: cargo
 before_cache:

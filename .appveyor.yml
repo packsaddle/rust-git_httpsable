@@ -8,7 +8,7 @@ environment:
     RUST_VERSION: stable
 
     # TODO Update this to match the name of your project.
-    CRATE_NAME: git_httpsable_cli
+    CRATE_NAME: git_httpsable
 
   # TODO These are all the build jobs. Adjust as necessary. Comment out what you
   # don't need
@@ -54,24 +54,6 @@ before_deploy:
   # TODO Update this to build the artifacts that matter to you
   - cargo rustc --target %TARGET% --release -- -C lto
   - ps: ci\before_deploy.ps1
-
-deploy:
-  artifact: /.*\.zip/
-  # TODO update `auth_token.secure`
-  # - Create a `public_repo` GitHub token. Go to: https://github.com/settings/tokens/new
-  # - Encrypt it. Go to https://ci.appveyor.com/tools/encrypt
-  # - Paste the output down here
-  auth_token:
-    secure: cmXHA+b2NNXi+xOy6UJAInjWu9nN9kJhRKhkKkNAZ51YL0r1xxK32wZTzkwkrZa7
-  description: ''
-  on:
-    # TODO Here you can pick which targets will generate binary releases
-    # In this example, there are some targets that are tested using the stable
-    # and nightly channels. This condition makes sure there is only one release
-    # for such targets and that's generated using the stable channel
-    RUST_VERSION: stable
-    appveyor_repo_tag: true
-  provider: GitHub
 
 cache:
   - C:\Users\appveyor\.cargo\registry
