@@ -14,7 +14,7 @@ keywords = ["git"]
 license = "MIT/Apache-2.0"
 name = "git_httpsable"
 repository = "https://github.com/packsaddle/rust-git_httpsable/"
-version = "1.0.0"
+version = "1.0.1"
 
 [badges.appveyor]
 project_name = "sanemat/rust-git-httpsable"
