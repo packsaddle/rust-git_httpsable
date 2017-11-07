@@ -1,3 +1,8 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/packsaddle/rust-git_httpsable/compare/v1.0.0...v1.0.1) (2017-11-07)
+
+* Refactor
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/packsaddle/rust-git_httpsable/compare/v0.1.0...v1.0.0) (2017-10-21)
 
