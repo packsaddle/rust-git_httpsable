@@ -23,7 +23,7 @@ pub fn filter_schema(input: &str, username: &str, password: &str) -> String {
     if input.starts_with("https://") || input.starts_with("http://") {
         adjust(input, username, password).unwrap()
     } else {
-        input.to_string()
+        input.to_owned()
     }
 }
 
@@ -35,7 +35,7 @@ pub fn adjust(schema_url: &str, username: &str, password: &str) -> Result<String
     parsed.set_password(Some(password)).expect(
         "failed to set password",
     );
-    Ok(parsed.as_str().to_string())
+    Ok(parsed.as_str().to_owned())
 }
 
 #[cfg(test)]
